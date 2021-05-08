@@ -1,0 +1,141 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/fonts/HeadlinerNo45-59y8.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/Azonix.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://scripts/start/novo_user.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+extra_spacing_char = 4
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+extra_spacing_top = 1
+extra_spacing_char = 2
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+use_filter = true
+extra_spacing_char = 3
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+use_filter = true
+extra_spacing_char = 2
+font_data = ExtResource( 2 )
+fallback/0 = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+extra_spacing_top = 5
+extra_spacing_char = 2
+font_data = ExtResource( 2 )
+
+[node name="novo_user" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+margin_left = -1388.83
+margin_top = -868.098
+margin_right = 2651.17
+margin_bottom = 2049.9
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="titulo" type="Label" parent="."]
+margin_left = 328.533
+margin_top = 62.6807
+margin_right = 633.533
+margin_bottom = 93.6807
+custom_fonts/font = SubResource( 1 )
+text = "welcome"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="erro" type="Label" parent="."]
+margin_left = 352.0
+margin_top = 384.0
+margin_right = 615.0
+margin_bottom = 413.0
+custom_fonts/font = SubResource( 2 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="user" type="LineEdit" parent="."]
+margin_left = 384.0
+margin_top = 200.0
+margin_right = 576.0
+margin_bottom = 242.0
+custom_fonts/font = SubResource( 3 )
+secret_character = "#"
+clear_button_enabled = true
+selecting_enabled = false
+placeholder_text = "username"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="name" type="LineEdit" parent="."]
+margin_left = 384.0
+margin_top = 136.0
+margin_right = 576.0
+margin_bottom = 178.0
+custom_fonts/font = SubResource( 3 )
+secret_character = "#"
+clear_button_enabled = true
+selecting_enabled = false
+placeholder_text = "name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="password" type="LineEdit" parent="."]
+margin_left = 384.0
+margin_top = 264.0
+margin_right = 576.0
+margin_bottom = 306.0
+custom_fonts/font = SubResource( 4 )
+secret = true
+secret_character = "?"
+clear_button_enabled = true
+selecting_enabled = false
+placeholder_text = "password"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="new_btn" type="Button" parent="."]
+margin_left = 416.0
+margin_top = 320.0
+margin_right = 547.0
+margin_bottom = 378.0
+focus_mode = 0
+custom_fonts/font = SubResource( 5 )
+enabled_focus_mode = 0
+text = "go"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+[connection signal="pressed" from="new_btn" to="." method="_on_new_btn_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

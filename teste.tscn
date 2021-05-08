@@ -1,0 +1,293 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://prop.gd" type="Script" id=2]
+[ext_resource path="res://scenes/skybox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/BlackTarget.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/RedTarget.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/YellowTarget.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/slope.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/floor.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/box.tscn" type="PackedScene" id=11]
+
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 20, 2, 40 )
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.129412, 0.0588235, 0.984314, 1 )
+
+[sub_resource type="CubeMesh" id=4]
+size = Vector3( 15, 1, 6 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 1, 0.960784, 0, 1 )
+
+[sub_resource type="ProceduralSky" id=6]
+
+[sub_resource type="Environment" id=7]
+background_mode = 2
+background_sky = SubResource( 6 )
+background_color = Color( 0.564706, 0.847059, 1, 1 )
+glow_intensity = 0.79
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 100, 1, 100 )
+
+[node name="teste" type="Spatial"]
+
+[node name="main" type="Spatial" parent="."]
+script = ExtResource( 2 )
+
+[node name="floors" type="Spatial" parent="main"]
+
+[node name="MeshInstance" parent="main/floors" instance=ExtResource( 10 )]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance9" parent="main/floors" instance=ExtResource( 10 )]
+transform = Transform( 0.91282, 0, 0.408362, 0, 1, 0, -0.408362, 0, 0.91282, 37.5109, 14.4729, -15.3856 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance10" parent="main/floors" instance=ExtResource( 10 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 19.5574, 14.0389, 31.4289 )
+visible = false
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance11" parent="main/floors" instance=ExtResource( 10 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -18.1716, 39.4906, 31.4289 )
+visible = false
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance12" parent="main/floors" instance=ExtResource( 10 )]
+transform = Transform( -0.47375, 0, 0.880659, 0, 1, 0, -0.880659, 0, -0.47375, 2.47371, 17.5257, 45.8008 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" parent="main/floors" instance=ExtResource( 10 )]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 10.582, 18.262, 0 )
+visible = false
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" parent="main/floors" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.1981, 7.634, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" parent="main/floors" instance=ExtResource( 10 )]
+transform = Transform( 0.412929, 0, 0.910763, 0, 1, 0, -0.910763, 0, 0.412929, 9.50016, 0.281622, -59.4618 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance8" parent="main/floors" instance=ExtResource( 10 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -31.7153, 15.6336, -40.8846 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" parent="main/floors" instance=ExtResource( 10 )]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, -40.3815, 16.6665, 0 )
+visible = false
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" parent="main/floors" instance=ExtResource( 10 )]
+transform = Transform( 2.65431e-14, 1.62921e-07, 1, 1, -1.62921e-07, 0, 1.62921e-07, 1, -1.62921e-07, -20.9436, 16.6665, 19.4258 )
+visible = false
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" parent="main/floors" instance=ExtResource( 10 )]
+transform = Transform( 0.832138, 0, 0.554568, 0, 1, 0, -0.554568, 0, 0.832138, -54.0157, 22.361, 24.6949 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="littleboxes" type="Spatial" parent="main"]
+visible = false
+
+[node name="box" parent="main/littleboxes" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -14 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box4" parent="main/littleboxes" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2618, 2, -41.6356 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box5" parent="main/littleboxes" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.7872, 17.6027, -41.6356 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box7" parent="main/littleboxes" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.8498, 14.5735, 13.4467 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box8" parent="main/littleboxes" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9683, 14.5735, 6.169 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box9" parent="main/littleboxes" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.6758, 14.5735, -9.32323 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box10" parent="main/littleboxes" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.2105, 14.5735, -3.08857 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box11" parent="main/littleboxes" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.2105, 14.5735, -14.8476 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box12" parent="main/littleboxes" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.50207, 14.5735, -38.7149 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box13" parent="main/littleboxes" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5161, 14.5735, -28.0972 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box14" parent="main/littleboxes" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.438267, 22.5786, -17.1844 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box2" parent="main/littleboxes" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.53494, 2, -5.06136 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box3" parent="main/littleboxes" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08397, 2, 4.737 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="slopes" type="Spatial" parent="main"]
+
+[node name="slope" parent="main/slopes" instance=ExtResource( 9 )]
+transform = Transform( 0.839525, 0.543321, 0, -0.543321, 0.839525, 0, 0, 0, 1, -15.1439, 4.15606, 0 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="slope3" parent="main/slopes" instance=ExtResource( 9 )]
+transform = Transform( -1.36776e-07, -8.85182e-08, -1, -0.543321, 0.839525, 0, 0.839525, 0.543321, -1.62921e-07, -28.82, 12.14, -24.856 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="slope2" parent="main/slopes" instance=ExtResource( 9 )]
+transform = Transform( 0.380067, -0.00796126, 0.924925, 0.0209424, 0.999781, 0, -0.924722, 0.0193701, 0.38015, 2.61773, -0.0111423, -35.0297 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="targets" type="Spatial" parent="main"]
+visible = false
+
+[node name="enemy" parent="main/targets" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.20856, -4.98152 )
+
+[node name="enemy2" parent="main/targets" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.2778, 9.82034, 3.64152 )
+
+[node name="enemy3" parent="main/targets" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.1221, 9.83106, -12.856 )
+
+[node name="enemy4" parent="main/targets" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.31037, 11.4563, -8.26477 )
+
+[node name="enemy5" parent="main/targets" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.47141, -47.787 )
+
+[node name="enemy6" parent="main/targets" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5014, 17.8799, -41.5988 )
+
+[node name="enemy7" parent="main/targets" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5793, 2.12626, -41.5988 )
+
+[node name="enemy8" parent="main/targets" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9372, 2.15544, -16.5834 )
+
+[node name="enemy9" parent="main/targets" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.75833, 16.1882, 30.7403 )
+
+[node name="enemy10" parent="main/targets" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.5942, 17.8651, -43.9719 )
+
+[node name="enemy11" parent="main/targets" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.0503, 16.2594, 31.491 )
+
+[node name="Target" parent="main/targets" instance=ExtResource( 8 )]
+transform = Transform( -1.62921e-07, 1, -1.62921e-07, 0, -1.62921e-07, -1, -1, -1.62921e-07, 2.65431e-14, -15.1278, 12.3061, -8.47867 )
+
+[node name="Target2" parent="main/targets" instance=ExtResource( 8 )]
+transform = Transform( 1, 1.49012e-07, -2.4869e-14, 0, -1.62921e-07, -1, -1.49012e-07, 1, -1.62921e-07, -0.851759, 21.2416, -9.71478 )
+
+[node name="skybox" parent="main" instance=ExtResource( 4 )]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="main"]
+environment = SubResource( 7 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="main"]
+transform = Transform( -0.909584, -0.0387456, 0.413711, 0.0595591, 0.973205, 0.222091, -0.41123, 0.226651, -0.882904, 12.3946, 14.148, -64.0767 )
+shadow_enabled = true
+
+[node name="Area" type="Area" parent="main"]
+visible = false
+collision_layer = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="main/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.4842, 0 )
+shape = SubResource( 8 )
+
+[node name="Spatial" type="Spatial" parent="main"]
+
+[node name="BlackTarget" parent="main" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.76, 0 )
+visible = false
+
+[node name="HingeJoint" type="HingeJoint" parent="main"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.6858, 0 )
+visible = false
+nodes/node_b = NodePath("../BlackTarget")
+motor/enable = true
+motor/target_velocity = 0.5
+
+[node name="RedTarget" parent="main" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87364, 19.1998, -9.7599 )
+visible = false
+
+[node name="Generic6DOFJoint" type="PinJoint" parent="main"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89886, 21.3027, -9.64898 )
+visible = false
+nodes/node_a = NodePath("../targets/Target2")
+nodes/node_b = NodePath("../RedTarget")
+params/bias = 0.2
+
+[node name="DivCamera" type="Spatial" parent="main"]
+transform = Transform( 0.0258453, 0, -0.999666, 0, 1, 0, 0.999666, 0, 0.0258453, -15.1729, 15.2816, -2.35942 )
+
+[node name="Camera" type="Camera" parent="main/DivCamera"]
+
+[node name="Container" type="Control" parent="main/DivCamera/Camera"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

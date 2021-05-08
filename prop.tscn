@@ -1,0 +1,318 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://scenes/floor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://prop.gd" type="Script" id=2]
+[ext_resource path="res://scenes/box.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/slope.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/audio/song02.ogg" type="AudioStream" id=6]
+[ext_resource path="res://scenes/YellowTarget.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/BlackTarget.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/RedTarget.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/Slime.tscn" type="PackedScene" id=15]
+
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 20, 2, 40 )
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.129412, 0.0588235, 0.984314, 1 )
+
+[sub_resource type="CubeMesh" id=4]
+size = Vector3( 15, 1, 6 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 1, 0.960784, 0, 1 )
+
+[sub_resource type="CylinderMesh" id=6]
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 0, 0.662745, 0.384314, 1 )
+
+[sub_resource type="CylinderShape" id=8]
+
+[sub_resource type="ProceduralSky" id=9]
+
+[sub_resource type="Environment" id=10]
+background_mode = 2
+background_sky = SubResource( 9 )
+background_color = Color( 0.564706, 0.847059, 1, 1 )
+glow_intensity = 0.79
+
+[node name="main" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="main" type="Spatial" parent="."]
+
+[node name="floors" type="Spatial" parent="main"]
+
+[node name="MeshInstance" parent="main/floors" instance=ExtResource( 1 )]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance9" parent="main/floors" instance=ExtResource( 1 )]
+transform = Transform( -3.78552e-08, 0.866025, 0.5, -1, -4.37114e-08, 0, 2.18557e-08, -0.5, 0.866025, -45.9065, 8.41425, 45.1704 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance10" parent="main/floors" instance=ExtResource( 1 )]
+transform = Transform( -0.636886, 0, 0.770958, 0, 1, 0, -0.770958, 0, -0.636886, 19.6838, 25.9239, 39.3142 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance11" parent="main/floors" instance=ExtResource( 1 )]
+transform = Transform( 0.700324, 0, 0.713825, 0, 1, 0, -0.713825, 0, 0.700324, -42.6042, 28.526, 37.6333 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance12" parent="main/floors" instance=ExtResource( 1 )]
+transform = Transform( 0.921552, 0, 0.388256, 0, 1, 0, -0.388256, 0, 0.921552, 39.5982, 16.8415, -15.9147 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" parent="main/floors" instance=ExtResource( 1 )]
+transform = Transform( 1.62648e-09, 0.00998357, 0.99995, 1, -1.62921e-07, 0, 1.62913e-07, 0.99995, -0.00998357, -13.2241, 9.66773, 65.7303 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" parent="main/floors" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.1981, 7.634, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" parent="main/floors" instance=ExtResource( 1 )]
+transform = Transform( 0.446604, 0, 0.894732, 0, 1, 0, -0.894732, 0, 0.446604, 17.9411, 0.28162, -59.7952 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance8" parent="main/floors" instance=ExtResource( 1 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -31.7153, 15.6336, -40.8846 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" parent="main/floors" instance=ExtResource( 1 )]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 12.6591, 8.14022, 40.5225 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" parent="main/floors" instance=ExtResource( 1 )]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, -65.1784, 32.2764, -10.8808 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" parent="main/floors" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -56.6744, 45.0276, -10.9872 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="littleboxes" type="Spatial" parent="main"]
+
+[node name="box" parent="main/littleboxes" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -14 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box4" parent="main/littleboxes" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.7577, 19.3939, -47.407 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box5" parent="main/littleboxes" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -56.8275, 40.3213, -37.5684 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box7" parent="main/littleboxes" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.9191, 20.8248, 20.5037 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box8" parent="main/littleboxes" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.4565, 17.1744, 10.9844 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box9" parent="main/littleboxes" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -67.2398, 24.5326, -42.0091 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box10" parent="main/littleboxes" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.3809, 28.351, -37.2617 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box11" parent="main/littleboxes" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -67.3077, 36.6289, -39.6433 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box12" parent="main/littleboxes" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0762, 14.5735, -43.1744 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box13" parent="main/littleboxes" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3138, 14.5735, -39.0832 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box14" parent="main/littleboxes" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.4947, 33.0574, -45.154 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box2" parent="main/littleboxes" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.53494, 2, -5.06136 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="box3" parent="main/littleboxes" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08397, 2, 4.737 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="slopes" type="Spatial" parent="main"]
+
+[node name="slope" parent="main/slopes" instance=ExtResource( 4 )]
+transform = Transform( 0.839525, 0.543321, 0, -0.543321, 0.839525, 0, 0, 0, 1, -15.1439, 4.15606, 0 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="slope3" parent="main/slopes" instance=ExtResource( 4 )]
+transform = Transform( -1.36776e-07, -8.85182e-08, -1, -0.543321, 0.839525, 0, 0.839525, 0.543321, -1.62921e-07, -28.82, 12.14, -24.856 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="slope2" parent="main/slopes" instance=ExtResource( 4 )]
+transform = Transform( 0.4592, -0.00961886, 0.888281, 0.0209424, 0.999781, 0, -0.888086, 0.0186027, 0.459301, 3.41862, 0.614459, -36.1798 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="targets" type="Spatial" parent="main"]
+
+[node name="enemy" parent="main/targets" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.60673, 2.20856, -15.5606 )
+
+[node name="enemy2" parent="main/targets" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.2778, 9.82034, 3.64152 )
+
+[node name="enemy3" parent="main/targets" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.1221, 9.83106, -12.856 )
+
+[node name="enemy4" parent="main/targets" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.84645, 3.08292, 15.2611 )
+
+[node name="enemy5" parent="main/targets" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.0961, 30.5162, 33.6724 )
+
+[node name="enemy6" parent="main/targets" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5014, 17.8799, -41.5988 )
+
+[node name="enemy7" parent="main/targets" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0463, 2.12626, -55.0532 )
+
+[node name="enemy8" parent="main/targets" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.2402, 18.7713, -16.5834 )
+
+[node name="enemy9" parent="main/targets" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7062, 27.9114, 49.986 )
+
+[node name="enemy10" parent="main/targets" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.5942, 17.8651, -43.9719 )
+
+[node name="enemy11" parent="main/targets" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.1337, 27.7923, 31.4528 )
+
+[node name="Target" parent="main/targets" instance=ExtResource( 9 )]
+transform = Transform( -1.62921e-07, 1, -1.62921e-07, 0, -1.62921e-07, -1, -1, -1.62921e-07, 2.65431e-14, -15.1278, 12.3061, -8.47867 )
+
+[node name="Target2" parent="main/targets" instance=ExtResource( 9 )]
+transform = Transform( 1, 1.49012e-07, -2.4869e-14, 0, -1.62921e-07, -1, -1.49012e-07, 1, -1.62921e-07, -0.851759, 21.2416, -9.71478 )
+
+[node name="RedTarget2" parent="main/targets" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1396, 12.0993, 35.1863 )
+
+[node name="joints" type="Spatial" parent="main"]
+
+[node name="box" type="MeshInstance" parent="main/joints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.02767, 12.1864, 38.443 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="main/joints/box"]
+
+[node name="CollisionShape" type="CollisionShape" parent="main/joints/box/StaticBody"]
+shape = SubResource( 8 )
+
+[node name="HingeJoint" type="HingeJoint" parent="main/joints"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, -6.97688, 12.3163, 38.4183 )
+nodes/node_a = NodePath("../box/StaticBody")
+nodes/node_b = NodePath("../../targets/RedTarget2")
+params/bias = 0.1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="main"]
+environment = SubResource( 10 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="main"]
+transform = Transform( -0.909584, -0.0387456, 0.413711, 0.0595591, 0.973205, 0.222091, -0.41123, 0.226651, -0.882904, 12.3946, 14.148, -64.0767 )
+shadow_enabled = true
+
+[node name="BlackTarget" parent="main" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.42223, 16.76, 0 )
+
+[node name="HingeJoint" type="HingeJoint" parent="main"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 19.6858, 0 )
+nodes/node_b = NodePath("../BlackTarget")
+motor/enable = true
+motor/target_velocity = 0.5
+
+[node name="RedTarget" parent="main" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87364, 18.1454, -9.7599 )
+
+[node name="Generic6DOFJoint" type="PinJoint" parent="main"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89886, 21.3027, -9.64898 )
+nodes/node_a = NodePath("../targets/Target2")
+nodes/node_b = NodePath("../RedTarget")
+params/bias = 0.2
+
+[node name="Slimes" type="Spatial" parent="main"]
+
+[node name="Slime" parent="main/Slimes" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9484, 46.0293, 1.19293 )
+
+[node name="Slime3" parent="main/Slimes" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.8854, 8.18304, 16.039 )
+
+[node name="Slime2" parent="main/Slimes" instance=ExtResource( 15 )]
+transform = Transform( 0.914586, 0, 0.404391, 0, 1, 0, -0.404391, 0, 0.914586, 1.49641, 0.868125, -61.7672 )
+
+[node name="Slime4" parent="main/Slimes" instance=ExtResource( 15 )]
+transform = Transform( 0.0503145, 0, 0.998733, 0, 1, 0, -0.998733, 0, 0.0503145, -23.125, 0.868125, 58.4437 )
+
+[node name="Slime5" parent="main/Slimes" instance=ExtResource( 15 )]
+transform = Transform( 0.0503145, 0, 0.998733, 0, 1, 0, -0.998733, 0, 0.0503145, -13.2292, 17.3342, 50.9469 )
+
+[node name="DivCamera" type="Spatial" parent="."]
+transform = Transform( 0.0258453, 0, -0.999666, 0, 1, 0, 0.999666, 0, 0.0258453, -15.1729, 15.2816, -2.35942 )
+
+[node name="Camera" type="Camera" parent="DivCamera"]
+
+[node name="Container" type="Control" parent="DivCamera/Camera"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -2.0
+autoplay = true

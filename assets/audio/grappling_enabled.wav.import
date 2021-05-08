@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/grappling_enabled.wav-521396d0476d7c835a3ee101a7e59875.sample"
+
+[deps]
+
+source_file="res://assets/audio/grappling_enabled.wav"
+dest_files=[ "res://.import/grappling_enabled.wav-521396d0476d7c835a3ee101a7e59875.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

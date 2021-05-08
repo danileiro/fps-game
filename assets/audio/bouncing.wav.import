@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bouncing.wav-0365e6a1145d8e0e65f5ca4d81dc35a2.sample"
+
+[deps]
+
+source_file="res://assets/audio/bouncing.wav"
+dest_files=[ "res://.import/bouncing.wav-0365e6a1145d8e0e65f5ca4d81dc35a2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
